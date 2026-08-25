@@ -28,9 +28,11 @@
 
   .slide {
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
-    margin: 0 auto;
+    bottom: 0;
+    margin: auto;
     width: 100%;
     max-width: 400px;
     max-height: 90vh;
@@ -77,7 +79,7 @@
   .hc .g{background:#f5f5f5;color:#888;}
   .hc .y{background:#fff8e1;color:#e6a817;}
 
-  .cg{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;}
+  .cg{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;}
   .cg .hd{font-size:10px;font-weight:600;color:#bbb;text-align:center;padding:5px 0;}
   .cg .d{text-align:center;padding:7px 0;font-size:13px;color:#333;border-radius:6px;}
   .cg .d.r{background:#ffebee;color:#c62828;font-weight:600;}
@@ -85,6 +87,7 @@
   .cg .d.t{background:#1a3a5c;color:#fff;font-weight:700;}
   .cg .d.v{background:#e3f2fd;color:#1565c0;font-weight:600;}
   .cg .d.y{background:#fff8e1;color:#e6a817;font-weight:600;}
+  .cg .d .dl{display:block;font-size:6px;font-weight:400;color:#b8860b;line-height:1.1;margin-top:1px;white-space:nowrap;}
 
   .leg{display:flex;gap:10px;margin-top:6px;font-size:10px;color:#999;}
   .ld{width:6px;height:6px;border-radius:50%;display:inline-block;}
@@ -180,6 +183,9 @@
   @media (min-width: 768px) {
     .slide { max-width: 440px; }
   }
+  @media (max-width: 430px) {
+    .slide { max-width: calc(100vw - 24px); }
+  }
 </style>
 </head>
 <body>
@@ -205,7 +211,8 @@
       <span class="c r">9/1·2 휴관</span>
       <span class="c r">🎑 추석 9/24~26</span>
       <span class="c r">9/27 휴관</span>
-      <span class="c y">9/29·30 대체수업</span>
+      <span class="c y">9/29(화) = 9/1 대체수업</span>
+      <span class="c y">9/30(수) = 9/2 대체수업</span>
     </div>
     <div class="cg">
       <div class="hd">일</div><div class="hd">월</div><div class="hd">화</div><div class="hd">수</div><div class="hd">목</div><div class="hd">금</div><div class="hd">토</div>
@@ -213,7 +220,7 @@
       <div class="d">6</div><div class="d r">7</div><div class="d">8</div><div class="d">9</div><div class="d">10</div><div class="d">11</div><div class="d">12</div>
       <div class="d">13</div><div class="d r">14</div><div class="d">15</div><div class="d">16</div><div class="d">17</div><div class="d">18</div><div class="d">19</div>
       <div class="d">20</div><div class="d r">21</div><div class="d">22</div><div class="d">23</div><div class="d r">24</div><div class="d r">25</div><div class="d r">26</div>
-      <div class="d r">27</div><div class="d r">28</div><div class="d y">29</div><div class="d y">30</div>
+      <div class="d r">27</div><div class="d r">28</div><div class="d y">29<span class="dl">1일 대체</span></div><div class="d y">30<span class="dl">2일 대체</span></div>
     </div>
 
     <div style="margin-top:6px;background:#fff8e1;border-radius:8px;padding:6px 10px;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#e6a817;">
@@ -227,9 +234,10 @@
     </div>
     <div class="up">
       <div class="ut">🌟 9월 일정 요약</div>
-      <div class="ui"><span class="ub" style="background:#c62828">휴관</span>9/1(화)·2(수) 스페셜올림픽 참가</div>
+      <div class="ui"><span class="ub" style="background:#c62828">휴관</span>9/1(화)·9/2(수) 스페셜올림픽 참가</div>
+      <div class="ui"><span class="ub" style="background:#e6a817">대체</span>9/29(화) — 9/1(화) 휴강분 대체수업</div>
+      <div class="ui"><span class="ub" style="background:#e6a817">대체</span>9/30(수) — 9/2(수) 휴강분 대체수업</div>
       <div class="ui"><span class="ub" style="background:#c62828">휴관</span>9/24(목)~27(일) 추석 연휴</div>
-      <div class="ui"><span class="ub" style="background:#e6a817">대체</span>9/29(화)·30(수) 대체수업 진행</div>
       <div class="ui"><span class="ub">보강</span>추석 휴강분 보강수업 예정</div>
     </div>
   </div>
@@ -275,8 +283,8 @@
       <p>9/1(화)·9/2(수) — 스페셜올림픽 참가<br>9/24(목)~26(토) — 추석 연휴, 9/27(일) 휴관</p>
     </div>
     <div class="ic re">
-      <h4>🔄 대체수업 (9/1·2 휴강분)</h4>
-      <p>9/29(화)·9/30(수)에 대체수업으로 진행됩니다.</p>
+      <h4>🔄 대체수업 안내</h4>
+      <p><strong>9/29(화)</strong> — 9/1(화) 휴강분 대체수업<br><strong>9/30(수)</strong> — 9/2(수) 휴강분 대체수업</p>
     </div>
     <div class="ic ok">
       <h4>✅ 추석 휴강분 보강수업</h4>
